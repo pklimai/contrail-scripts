@@ -1,0 +1,29 @@
+heat_template_version: 2013-05-23
+
+description: HOT template to create a service instance
+
+parameters:
+  net1:
+    type: string
+    description: Name of left VN
+  net2:
+    type: string
+    description: Name of right VN
+  template:
+    type: string
+    description: Service template name or UUID
+  instance_name:
+    type: string
+    description: Service instance name
+
+resources:
+  service_instance:
+    type: OS::Contrail::ServiceInstance
+    properties:
+      name: { get_param: instance_name }
+      service_template: { get_param: template }
+      interface_list: [
+        { virtual_network: { get_param: net1 } },
+        { virtual_network: { get_param: net2 } }
+      ]
+
