@@ -1,0 +1,4 @@
+### Examples of using Contrail Analytics API
+
+* flows-3.1.py - obtain Flow Record Table via call to Analytics API
+* flows.py - deprecated version (Contrail 2.21)
