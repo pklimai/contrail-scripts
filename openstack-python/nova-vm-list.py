@@ -4,8 +4,8 @@ from novaclient import client
 
 nova = client.Client(version = 2, 
         username = "admin", 
-        api_key = "contrail", 
-        project_id = "demo", 
+        password = "contrail", 
+        project_name = "demo", 
         auth_url = "http://10.10.10.230:5000/v2.0/")
 
 VMs = nova.servers.list()
